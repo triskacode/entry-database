@@ -1,11 +1,7 @@
 <?php
+require_once "config.php";
 
-define('HOST_NAME', 'localhost');
-define('DB_USER', 'root');
-define('DB_PASS', '');
-define('DB_NAME', 'triskacode');
-
-$mysqli = new mysqli(HOST_NAME, DB_USER, DB_PASS, DB_NAME);
+$mysqli = new mysqli($host, $username, $password, $database);
 
 if ($mysqli->connect_error) {
     die('Error (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error);
